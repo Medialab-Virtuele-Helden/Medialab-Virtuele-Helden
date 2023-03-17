@@ -18,11 +18,43 @@
 
     <body>
         <header>
-            <nav class="navbar navbar-expand">
-                <div class="container container-xxl">
-                    <img src="{{ asset('images/virtuele-helden-navigatie-logo.png') }}" alt="Virtuele Helden Logo">
+            <nav class="navbar navbar-expand-lg bg-light">
+                <div class="container-fluid container-xxl">
+                    <a class="navbar-brand" href="#">
+                        <img src="{{ asset('images/virtuele-helden-navigatie-logo.png') }}" alt="Virtuele Helden Logo" class="o-nav-logo">
+                    </a>
+                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Community</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Trainingen</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">VH Events</a>
+                        </li>
+                    </ul>
+                    <div class="d-flex">
+                        <div>
+                            <i class="fa-sharp fa-solid fa-magnifying-glass o-icon-white"></i>
+                        </div>
+                        <div>
+                            <i class="fa-solid fa-calendar-days o-icon-white"></i>
+                            <i class="fa-solid fa-globe o-icon-white"></i>
+                            <i class="fa-solid fa-comment o-icon-white"></i>
+                            Team 3
+                        </div>
+                        <div>
+                            <i class="fa-sharp fa-solid fa-bars o-icon-white"></i>
+                        </div>
+                    </div>
+                  </div>
                 </div>
-            </nav>
+              </nav>
         </header>
 
         @yield('content')
