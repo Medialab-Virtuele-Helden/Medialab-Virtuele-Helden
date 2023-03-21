@@ -1,4 +1,6 @@
 # Medialab-Virtuele-Helden
+
+## About
 Het project voor het cursusvak Medialab 1 met de opdrachtgevers Virtuele Helden (Roel Willemse). 
 
 ## Branches
