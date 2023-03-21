@@ -32,6 +32,9 @@ return new class extends Migration
      */
     public function down(): void
     {
+        Schema::table('challenges', function (Blueprint $table){
+            $table->dropForeign('challenges_organisor_foreign');
+        });
         Schema::dropIfExists('challenges');
     }
 };
