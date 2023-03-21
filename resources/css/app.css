@@ -1,0 +1,15 @@
+:root {
+    --color-primary: #ECC34C;
+    --color-text: #222222;
+    --color-background: #E9EAEE;
+
+    --font-family-primary: "Open Sans", sans-serif;
+}
+
+html, body {
+    font-family: var(--font-family-primary);
+}
+
+.navbar {
+    background-color: var(--color-primary);
+}
