@@ -16,9 +16,3 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-
-
-// This route can be removed once the layout is done and not needed anymore
-Route::get('/test', function () {
-    return view('welcome-test');
-});

@@ -18,20 +18,25 @@
 
     <body>
         <header>
-            <nav class="navbar navbar-expand-lg bg-light">
+            <nav class="navbar navbar-expand-lg shadow">
                 <div class="container-fluid container-xxl">
-                    <a class="navbar-brand" href="#">
+                    <a class="navbar-brand me-5" href="#">
                         <img src="{{ asset('images/virtuele-helden-navigatie-logo.png') }}" alt="Virtuele Helden Logo" class="o-nav-logo">
                     </a>
                   <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                   </button>
                   <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Community</a>
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-5">
+                        <li class="nav-item me-2">
+                            <a class="nav-link position-relative" href="#">
+                                Community
+                                <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                                    1
+                                <span class="visually-hidden">unread messages</span>
+                            </a>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item me-2">
                             <a class="nav-link" href="#">Trainingen</a>
                         </li>
                         <li class="nav-item">
@@ -39,18 +44,33 @@
                         </li>
                     </ul>
                     <div class="d-flex">
-                        <div>
-                            <i class="fa-sharp fa-solid fa-magnifying-glass o-icon-white"></i>
-                        </div>
-                        <div>
-                            <i class="fa-solid fa-calendar-days o-icon-white"></i>
-                            <i class="fa-solid fa-globe o-icon-white"></i>
-                            <i class="fa-solid fa-comment o-icon-white"></i>
-                            Team 3
-                        </div>
-                        <div>
-                            <i class="fa-sharp fa-solid fa-bars o-icon-white"></i>
-                        </div>
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-5">
+                            <li class="nav-item me-2">
+                                <a class="nav-link" href="#"><i class="fa-sharp fa-solid fa-magnifying-glass o-icon-nav"></i></a>
+                            </li>
+                        </ul>
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-5">
+                            <li class="nav-item me-2">
+                                <a class="nav-link" href="#"><i class="fa-solid fa-calendar-days o-icon-nav"></i></a>
+                            </li>
+                            <li class="nav-item me-2">
+                                <a class="nav-link" href="#"><i class="fa-solid fa-globe o-icon-nav"></i></a>
+                            </li>
+                            <li class="nav-item me-2">
+                                <a class="nav-link" href="#"><i class="fa-solid fa-comment o-icon-nav"></i></a>
+                            </li>
+                        </ul>
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-5">
+                            <li class="nav-item d-flex">
+                                <img src="{{ asset('images/user-avatar.png') }}" alt="User avatar" class="o-nav-user">
+                                <a class="nav-link" href="#">Team 3</a>
+                            </li>
+                        </ul>
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-5">
+                            <li class="nav-item me-2">
+                                <a class="nav-link" href="#"><i class="fa-sharp fa-solid fa-bars o-icon-nav"></i></a>
+                            </li>
+                        </ul>
                     </div>
                   </div>
                 </div>

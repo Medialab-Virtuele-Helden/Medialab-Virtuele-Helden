@@ -9,6 +9,7 @@
 
 :root {
     --color-primary: #f4c227;
+    --color-danger: #fb757b;
     --color-text: #222222;
     --color-background: #E9EAEE;
 
@@ -33,17 +34,32 @@ a {
     height: 70px;
 }
 
+.nav-link {
+    color: white;
+}
+
+.nav-link:hover {
+    color: white !important;
+    opacity: 0.8;
+}
+
+.bg-danger {
+    background-color: var(--color-danger) !important;
+}
+
+
 .o-nav-logo {
     height: 44px;
     width: auto;
 }
 
-.nav-link {
+.o-icon-nav {
     color: white;
+    font-size: 23px;
 }
 
-
-.o-icon-white {
-    color: white;
-    font-size: 17px;
+.o-nav-user {
+    height: 35px;
+    width: auto;
+    border-radius: 5px;
 }

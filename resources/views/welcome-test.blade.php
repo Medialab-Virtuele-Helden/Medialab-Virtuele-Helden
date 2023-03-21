@@ -1,5 +1,5 @@
 @extends('layouts.app')
 
 @section('content')
-    <h1><i class="fa-solid fa-globe"></i> Hello this is a test.</h1>
+    <h1>Hello this is a test and you may edit this page in any way.</h1>
 @endsection
