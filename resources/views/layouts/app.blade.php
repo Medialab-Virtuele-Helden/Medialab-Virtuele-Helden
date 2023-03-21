@@ -66,6 +66,7 @@
                                 <a class="nav-link" href="#">Team 3</a>
                             </li>
                         </ul>
+                        
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-5">
                             <li class="nav-item me-2">
                                 <a class="nav-link" href="#"><i class="fa-sharp fa-solid fa-bars o-icon-nav"></i></a>
@@ -74,8 +75,18 @@
                     </div>
                   </div>
                 </div>
+                        <a href="{{ route('logout') }}"
+                            onclick="event.preventDefault();
+                            document.getElementById('logout-form').submit();">
+                            {{ __('Logout') }}
+                        </a>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                        @csrf
+                    </form>
+
               </nav>
         </header>
+        
 
         @yield('content')
 
