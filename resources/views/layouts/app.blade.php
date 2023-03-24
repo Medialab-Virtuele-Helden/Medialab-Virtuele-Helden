@@ -93,7 +93,7 @@
                       <a class="nav-link" href="{{ route('logout') }}"
                           onclick="event.preventDefault();
                           document.getElementById('logout-form').submit();">
-                        <i class="bi bi-box-arrow-left"></i> {{ __('Logout') }}
+                        <i class="bi bi-box-arrow-left"></i> {{ __('Uitloggen') }}
                       </a>
                       <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                         @csrf
@@ -101,12 +101,12 @@
                     </li>
                   @else
                     <li class="nav-item">
-                        <a href="{{ route('login') }}" class="nav-link">Login</a>
+                        <a href="{{ route('login') }}" class="nav-link">Inloggen</a>
                     </li>
                     <!-- if user is logged in, show user/profile link -->
                     @if (Route::has('register'))
                         <li class="nav-item">
-                            <a href="{{ route('register') }}" class="nav-link">Register</a>
+                            <a href="{{ route('register') }}" class="nav-link">Registreren</a>
                         </li>
                     @endif
                   @endauth
