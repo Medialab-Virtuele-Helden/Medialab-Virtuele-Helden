@@ -43,11 +43,37 @@ a {
     opacity: 0.8;
 }
 
+.card {
+    border: none;
+    border-radius: 5px;
+}
+
 .bg-danger {
     background-color: var(--color-danger) !important;
 }
 
+.btn {
+    border-radius: 3px;
+    padding: 8px 12px;
+}
 
+.btn-primary {
+    background-color: var(--color-primary);
+    color: var(--color-text);
+}
+
+.btn-secondary {
+    background-color: black;
+    color: white;
+}
+
+.col-form-label {
+    font-size: 14px;
+    font-weight: 700;
+}
+
+
+//Custom CSS classes not provided by bootstrap
 .o-nav-logo {
     height: 44px;
     width: auto;
@@ -62,4 +88,18 @@ a {
     height: 35px;
     width: auto;
     border-radius: 5px;
+}
+
+.o-card-create-challenge {
+    background-color: #EEEEEE;
+    border-radius: 0px 0px 15px 15px;
+    padding: 20px;
+}
+
+.o-card-create-challenge-header {
+    font-size: 20px;
+    font-weight: 700;
+    background-color: #D9D9D9;
+    border-radius: 15px 15px 0px 0px;
+    padding: 20px;
 }
