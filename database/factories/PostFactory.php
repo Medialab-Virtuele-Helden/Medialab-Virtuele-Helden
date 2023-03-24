@@ -17,7 +17,8 @@ class PostFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'title' => 'Titel voor bericht',
+            'content' => '<p>Standaard content voor een bericht. </p>'
         ];
     }
 }

@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
 use App\Models\User;
+use App\Models\Post;
 
 class DatabaseSeeder extends Seeder
 {
@@ -27,7 +28,7 @@ class DatabaseSeeder extends Seeder
         // Create 3 users, each with a post
         User::factory()
             ->count(3)
-            ->hasPosts(1)
+            ->hasPosts(Post::factory()->count(3))
             ->create();
     }
 }
