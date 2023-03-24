@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\PostController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,6 +17,18 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
+});
+
+Route::controller(PostController::Class)->group(function() {
+    Route::get('/posts/{id}', 'show');
+
+    Route::get('/posts/create', 'create');
+    Route::post('/posts/store', 'store');
+
+    Route::get('/posts/edit', 'edit');
+    Route::post('/posts/update', 'update');
+
+    Route::get('/like-post', 'likePost');
 });
 
 
