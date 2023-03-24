@@ -18,7 +18,7 @@
                         <div class="row mb-3">
                             <label for="challenge-description" class="col-sm-2 col-form-label">Beschrijving</label>
                             <div class="col-sm-10">
-                                <textarea class="form-control" id="challenge-description"></textarea>
+                                <textarea class="text-editor form-control" id="challenge-description"></textarea>
                             </div>
                         </div>
                         <div class="row mb-3">
