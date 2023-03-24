@@ -26,7 +26,7 @@ class PostController extends Controller
             'title' => 'required|max:50',
             'content'=> 'required'
         ]);
-        $author = Auth::user();
+        $author = Auth::id();
 
         $post = new Post([
             'title' => $validated['title'],
@@ -35,7 +35,7 @@ class PostController extends Controller
         ]);
 
         if ($post->save()) {
-            return redirect()->route('post.post', ['post' => $post])->with('status', 'Post has been created!');
+            return redirect()->route('post.show', ['id' => $post->id])->with('status', 'Post has been created!');
         }
 
         return redirect()->route('post.create', ['post' => $post])->with('status', 'Something went wrong, try again.');
