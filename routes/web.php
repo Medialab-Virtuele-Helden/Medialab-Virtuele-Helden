@@ -14,10 +14,13 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome-test');
+    return view('welcome');
 });
 
-Auth::routes();
+
+Route::get('/challenge/create', function () {
+    return view('admin.create-challenge');
+});
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
