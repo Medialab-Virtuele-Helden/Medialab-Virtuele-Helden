@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 use App\Models\Post;
 
@@ -14,25 +15,56 @@ class PostController extends Controller
     }
 
     public function create() {
-        // if user is logged in
-        // allow continuation to create page
+        if (Auth::check()) {
+            return view('post.edit', compact('post'));
+        }
+        abort(401); // user is unathourized
     }
 
     public function store(Request $request) {
-        // validate data coming from request
-        // store the entire record
-        // save and make sure it saves correct
+        $validated = $request->validate([
+            'title' => 'required|max:50',
+            'content'=> 'required'
+        ]);
+        $author = Auth::user();
+
+        $post = new Post([
+            'title' => $validated['title'],
+            'content' => $validated['content'],
+            'author' => $author
+        ]);
+
+        if ($post->save()) {
+            return redirect()->route('post.post', ['post' => $post])->with('status', 'Post has been created!');
+        }
+
+        return redirect()->route('post.create', ['post' => $post])->with('status', 'Something went wrong, try again.');
     }
 
     public function edit(string $id) {
-        // make sure user is logged in && correct user of post
-        // allow continuation to edit page
+        $post = Post::findOrFail($id);
+
+        if (Auth::check() && Auth::id() == $post->author) {
+            return view('post.edit', compact('post'));
+        }
+        abort(401); // user is unathourized
     }
 
     public function update(string $id, Request $request) {
-        // validate data coming from request
-        // store the entire record
-        // save and make sure it saves correct
+        $validated = $request->validate([
+            'title' => 'required|max:50',
+            'content'=> 'required'
+        ]);
+
+        $post = Post::findOrFail($id);
+        $post->title = $validated['title'];
+        $post->content = $validated['content'];
+
+        if ($post->save()) {
+            return redirect()->route('post.edit', ['post' => $post])->with('status', 'Post has been edited!');
+        }
+
+        return redirect()->route('post.edit', ['post' => $post])->with('status', 'Something went wrong, try again.');
     }
 
     public function likePost(string $id) {

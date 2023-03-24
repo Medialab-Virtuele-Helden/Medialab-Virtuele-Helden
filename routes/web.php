@@ -25,8 +25,8 @@ Route::controller(PostController::Class)->group(function() {
     Route::get('/posts/create', 'create');
     Route::post('/posts/store', 'store');
 
-    Route::get('/posts/edit', 'edit');
-    Route::post('/posts/update', 'update');
+    Route::get('/posts/{id}/edit', 'edit');
+    Route::post('/posts/{id}/update', 'update');
 
     Route::get('/like-post', 'likePost');
 });
