@@ -11,6 +11,8 @@ class Challenge extends Model
 {
     use HasFactory;
 
+    protected $fillable = ['title', 'organiser', 'status', 'description', 'start_date', 'end_date', 'challenge_goal', 'reward'];
+
     /**
      * Get the user that created the challenge.
      */
