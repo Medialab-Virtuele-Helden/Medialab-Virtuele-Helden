@@ -16,7 +16,7 @@ class PostController extends Controller
 
     public function create() {
         if (Auth::check()) {
-            return view('post.edit', compact('post'));
+            return view('post.create');
         }
         abort(401); // user is unathourized
     }

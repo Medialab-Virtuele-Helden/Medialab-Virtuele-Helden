@@ -20,11 +20,11 @@ Route::get('/', function () {
 });
 
 Route::controller(PostController::Class)->group(function() {
-    Route::get('/posts/{id}', 'show');
-
     Route::get('/posts/create', 'create');
     Route::post('/posts/store', 'store');
 
+    Route::get('/posts/{id}', 'show');
+    
     Route::get('/posts/{id}/edit', 'edit');
     Route::post('/posts/{id}/update', 'update');
 
