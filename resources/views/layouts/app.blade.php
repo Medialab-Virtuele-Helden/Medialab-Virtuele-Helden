@@ -29,7 +29,7 @@
     <header>
       <nav class="navbar navbar-expand-lg shadow">
         <div class="container-fluid container-xxl">
-          <a class="navbar-brand me-5" href="#">
+          <a class="navbar-brand me-5" href="{{ route('post.index') }}">
             <img src="{{ asset('images/virtuele-helden-navigatie-logo.png') }}" alt="Virtuele Helden Logo" class="o-nav-logo">
           </a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -38,7 +38,7 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-5">
               <li class="nav-item me-2">
-                <a class="nav-link position-relative" href="#">
+                <a class="nav-link position-relative" href="{{ route('post.index') }}">
                   Community
                   <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
                     1

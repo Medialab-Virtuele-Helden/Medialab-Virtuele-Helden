@@ -9,6 +9,12 @@ use App\Models\Post;
 
 class PostController extends Controller
 {
+    public function index() {
+        $posts = Post::all();
+
+        return view('post.posts', compact('posts'));
+    }
+
     public function show(string $id) {
         $post = Post::findOrFail($id);
         return view('post.post', compact('post'));

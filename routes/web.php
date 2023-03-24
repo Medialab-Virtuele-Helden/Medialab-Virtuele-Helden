@@ -15,15 +15,13 @@ use App\Http\Controllers\PostController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
 Route::controller(PostController::Class)->group(function() {
     Route::get('/posts/create', 'create')->name('post.create');
     Route::post('/posts/store', 'store')->name('post.store');
 
     Route::get('/posts/{id}', 'show')->name('post.show');
+
+    Route::get('/', 'index')->name('post.index');
     
     Route::get('/posts/{id}/edit', 'edit')->name('post.edit');
     Route::post('/posts/{id}/update', 'update')->name('post.update');
