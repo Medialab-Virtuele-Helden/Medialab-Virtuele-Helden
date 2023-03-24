@@ -21,7 +21,12 @@ Route::get('/', function () {
     return view('welcome-test');
 });
 
-//
+//Route for the page to create a new challenge
 Route::get('/challenge/create', function () {
     return view('admin.create-challenge');
+});
+
+//Route for the page to show a challenge
+Route::get('/challenge/show', function () {
+    return view('admin.show-challenge');
 });

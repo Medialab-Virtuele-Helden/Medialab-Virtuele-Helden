@@ -1,5 +1,6 @@
 // Fonts
 @import url('https://fonts.bunny.net/css?family=Nunito');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 // Variables
 @import 'variables';
@@ -14,6 +15,7 @@
     --color-background: #E9EAEE;
 
     --font-family-primary: "Open Sans", sans-serif;
+    --font-family-secondary: "Inter", sans-serif;
 }
 
 html, body {
@@ -21,6 +23,12 @@ html, body {
     color: var(--color-text);
     background-color: var(--color-background);
 }
+
+h2 {
+    font-size: 28px;
+    font-weight: 400;
+}
+
 p {
     font-size: 14px;
 }
@@ -102,4 +110,19 @@ a {
     background-color: #D9D9D9;
     border-radius: 15px 15px 0px 0px;
     padding: 20px;
+}
+
+.o-text {
+    color: var(--color-text) !important;
+}
+
+.o-text-primary {
+    color: var(--color-primary) !important;
+}
+
+.o-timer {
+    font-family: var(--font-family-secondary);
+    font-size: 28px;
+    font-weight: 600;
+    color: var(--color-primary);
 }
