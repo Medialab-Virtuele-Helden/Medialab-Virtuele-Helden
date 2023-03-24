@@ -20,13 +20,13 @@ Route::get('/', function () {
 });
 
 Route::controller(PostController::Class)->group(function() {
-    Route::get('/posts/create', 'create');
-    Route::post('/posts/store', 'store');
+    Route::get('/posts/create', 'create')->name('post.create');
+    Route::post('/posts/store', 'store')->name('post.store');
 
-    Route::get('/posts/{id}', 'show');
+    Route::get('/posts/{id}', 'show')->name('post.show');
     
-    Route::get('/posts/{id}/edit', 'edit');
-    Route::post('/posts/{id}/update', 'update');
+    Route::get('/posts/{id}/edit', 'edit')->name('post.edit');
+    Route::post('/posts/{id}/update', 'update')->name('post.update');
 
     Route::get('/like-post', 'likePost');
 });
