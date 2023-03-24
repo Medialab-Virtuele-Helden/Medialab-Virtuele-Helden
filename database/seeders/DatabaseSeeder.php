@@ -27,6 +27,7 @@ class DatabaseSeeder extends Seeder
         // Create 3 users, each with a post
         User::factory()
             ->count(3)
+            ->hasPosts(1)
             ->create();
     }
 }
