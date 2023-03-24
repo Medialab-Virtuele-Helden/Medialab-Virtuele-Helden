@@ -16,7 +16,7 @@
           </ul>
         </div>
       @endif
-      <h1 class="">Nieuwe post maken</h1>
+      <h1 class="">Nieuwe bericht plaatsen</h1>
 
       <div>
         <form method="post" action="{{url('posts/store')}}" enctype="multipart/form-data">
