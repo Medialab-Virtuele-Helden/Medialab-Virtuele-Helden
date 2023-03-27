@@ -19,7 +19,7 @@
       <h1 class="">Bericht aanpassen</h1>
 
       <div>
-        <form method="post" action="{{url('posts/store')}}" enctype="multipart/form-data">
+        <form method="post" action="{{ route('post.update', ['id' => $post->id]) }}" enctype="multipart/form-data">
         @csrf
           <div class="mt-3">
             <h2 class="o-card-create-challenge-header mb-0">Content</h2>
