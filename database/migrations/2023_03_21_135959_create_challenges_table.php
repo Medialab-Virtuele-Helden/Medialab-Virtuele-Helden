@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('challenges', function (Blueprint $table) {
             $table->id();
             $table->string('title');
-            $table->unsignedBigInteger('organisor');
+            $table->unsignedBigInteger('organiser');
             $table->tinyInteger('status');
             $table->longText('content');
             $table->timestamp('start_date')->useCurrent();
