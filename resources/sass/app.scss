@@ -1,9 +1,11 @@
 // Bootstrap
 @import 'bootstrap/scss/bootstrap';
 
+
 @import 'base';
 @import 'variables';
 
+// Component list
 @import './components/nav';
 @import './components/buttons';
 @import './components/form';
