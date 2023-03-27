@@ -16,7 +16,7 @@ class ChallengeController extends Controller
     public function index(): View
     {
         $challenges = Challenge::all();
-        return view ('challenges.index')->with('challenges', $challenges);
+        return view ('challenges.index')->compact('challenges');
     }
     public function create(): View
     {
