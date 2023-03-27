@@ -67,7 +67,7 @@ class PostController extends Controller
         $post->content = $validated['content'];
 
         if ($post->save()) {
-            return redirect()->route('post.edit', ['post' => $post])->with('status', 'Post has been edited!');
+            return redirect()->route('post.show', ['id' => $post->id])->with('status', 'Post has been edited!');
         }
 
         return redirect()->route('post.edit', ['post' => $post])->with('status', 'Something went wrong, try again.');
