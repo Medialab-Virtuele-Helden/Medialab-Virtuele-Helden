@@ -44,7 +44,6 @@ class ChallengeController extends Controller
             'end-date' => 'required|date|after:start_date',
             'challenge-goal' => 'required|numeric',
             'reward' => 'required'
-
         ]);
 
         $organiser = Auth::id(); // Get current user id to store as organiser
@@ -72,29 +71,42 @@ class ChallengeController extends Controller
         ]);
 
         if ($challenge->save()) {
-            return redirect()->route('challenge.show', ['id' => $challenge->id])->with('status', 'Post has been created!');
+            return redirect()->route('challenge.show', ['id' => $challenge->id])->with('status', 'Challenge has been created!');
         }
         return redirect()->route('challenge.create', ['challenge' => $challenge])->with('status', 'Something went wrong, try again.');
     }
  
-    public function edit(string $id): View
-    {
+    public function edit(string $id): View {
         if (Auth::check()) {
-        $challenge = Challenge::findOrFail($id);
-        return view('challenges.edit')->with('challenges', $challenge);
+            $challenge = Challenge::findOrFail($id);
+            return view('challenge.edit', compact('challenge'));
         }
         abort(401);
     }
  
-    public function update(Request $request, string $id): RedirectResponse
-    {
+    public function update(Request $request, string $id): RedirectResponse {
+        $validated = $request->validate([
+            'title' => 'required|max:50',
+            'content' => 'required',
+            'start-date' => 'required|date',
+            'end-date' => 'required|date|after:start_date',
+            'challenge-goal' => 'required|numeric',
+            'reward' => 'required'
+        ]);
+
         $challenge = Challenge::findOrFail($id);
-        // $validated = $request->validate([
-            //information
-        // ]);
-        $input = $request->all();
-        $challenge->update($input);
-        return redirect('challenge')->with('flash_message', 'challenge Updated!');  
+
+        $challenge->title = $validated['title'];
+        $challenge->content = $validated['content'];
+        $challenge->start_date = $validated['start-date'];
+        $challenge->end_date = $validated['end-date'];
+        $challenge->challenge_goal = $validated['challenge-goal'];
+        $challenge->reward = $validated['reward'];
+
+        if ($challenge->save()) {
+            return redirect()->route('challenge.show', ['id' => $challenge->id])->with('status', 'Challenge has been edited!');
+        }
+        return redirect()->route('challenge.edit', ['challenge' => $challenge])->with('status', 'Something went wrong, try again.');
     }
  
     //Up for discussion
