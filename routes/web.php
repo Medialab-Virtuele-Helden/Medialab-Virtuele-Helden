@@ -25,6 +25,16 @@ Route::get('/challenge/create', function () {
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::resource("/challenge", ChallengeController::class);
+Route::controller(ChallengeController::Class)->group(function() {
+    Route::get('/challenges/create', 'create')->name('challenge.create');
+    Route::post('/challenges/store', 'store')->name('challenge.store');
+
+    Route::get('/challenges/{id}', 'show')->name('challenge.show');
+
+    Route::get('/', 'index')->name('challenge.index');
+    
+    Route::get('/challenges/{id}/edit', 'edit')->name('challenge.edit');
+    Route::post('/challenges/{id}/update', 'update')->name('challenge.update');
+});
 
 Auth::routes();
