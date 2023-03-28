@@ -1,11 +1,16 @@
 // Bootstrap
 @import 'bootstrap/scss/bootstrap';
 
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 @import 'base';
 @import 'variables';
+@import 'text';
 
 // Component list
 @import './components/nav';
 @import './components/buttons';
 @import './components/form';
+@import './components/progress-bar';
+@import './components/leaderbord';
+@import './components/timer';
