@@ -7,10 +7,10 @@
                 <div class="row mb-5">
                     <div class="card shadow bg-white d-flex flex-row justify-content-between p-4">
                         <div>
-                            <h2 class="mb-0">Challenge titel</h1>
+                            <h2 class="mb-0">{{ $challenge-> title }}</h1>
                         </div>
                         <div class="float-end">
-                            <h2 class="o-timer mb-0"><i class="fa-sharp fa-regular fa-clock o-text"></i> 00:00:10:00</h1>
+                            <h2 class="o-timer mb-0"><i class="fa-sharp fa-regular fa-clock o-text"></i>{{ $challenge-> end_date }}</h1>
                         </div>
                     </div>
                 </div>
@@ -21,10 +21,10 @@
                         <div>
                             <div>
                                 <h1 class="mb-1 mt-3">Uitdaging</h1>
-                                <h4>Zorg dat er totaal 300 antwoorden worden gegeven.</h4>
+                                <h4>{!! $challenge-> content !!}</h4>
                             </div>
                             <div>
-                                <h4 class="mt-5"><b>Prijs:</b> De 10 meest actieve gebruikers worden uitgenodigd voor een exclusieve borrel samen met Roel!</h4>
+                                <h4 class="mt-5"><b>Prijs:</b>{{ $challenge-> reward }}</h4>
                             </div>
                         </div>
                         <div class="progress mt-5">
