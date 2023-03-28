@@ -1,0 +1,36 @@
+@import '../variables';
+
+.navbar {
+  background-color: $color-primary !important;
+  height: 70px;
+}
+
+.nav-link {
+  color: white;
+
+  &:hover {
+    color: white !important;
+    opacity: 0.8;
+  }
+}
+
+.o-nav-logo {
+  height: 44px;
+  width: auto;
+}
+
+.o-icon-nav {
+  color: white;
+  font-size: 23px;
+}
+
+.o-nav-user {
+  height: 35px;
+  width: auto;
+  border-radius: 5px;
+}
+
+// Notification
+.bg-danger {
+  background-color: $color-danger !important;
+}
