@@ -75,7 +75,7 @@ class ChallengeController extends Controller
         }
         return redirect()->route('challenge.create', ['challenge' => $challenge])->with('status', 'Something went wrong, try again.');
     }
- 
+
     public function edit(string $id): View {
         if (Auth::check()) {
             $challenge = Challenge::findOrFail($id);
@@ -83,7 +83,7 @@ class ChallengeController extends Controller
         }
         abort(401);
     }
- 
+
     public function update(Request $request, string $id): RedirectResponse {
         $validated = $request->validate([
             'title' => 'required|max:50',
@@ -108,7 +108,7 @@ class ChallengeController extends Controller
         }
         return redirect()->route('challenge.edit', ['challenge' => $challenge])->with('status', 'Something went wrong, try again.');
     }
- 
+
     //Up for discussion
     /* public function destroy(string $id): RedirectResponse
     {
@@ -118,5 +118,5 @@ class ChallengeController extends Controller
         }
         abort(401);
     }
-    */ 
+    */
 }
