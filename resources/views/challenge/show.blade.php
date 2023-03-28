@@ -29,8 +29,6 @@
                         </div>
                         <div class="progress mt-5">
                             <div class="progress-bar d-flex flex-row justify-content-between" role="progressbar" style="width: {{$progress}}%">
-                                <h4 class="o-text"><b class="float-start ms-3 mt-2" style="">{{$amountPosts}}/300</b></h4>
-
                                 <h4 class="o-text"><b class="float-end me-3 mt-2">{{$progress}}%</b></h4>
                             </div>
                         </div>

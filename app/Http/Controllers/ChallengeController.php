@@ -29,7 +29,7 @@ class ChallengeController extends Controller
 
         $amountPosts = $this->countPostsWithinChallengePeriod($challenge);
 
-        $progress = $amountPosts / $challenge->challenge_goal * 100;
+        $progress = round($amountPosts / $challenge->challenge_goal * 100);
 
         return view('challenge.show', compact('challenge', 'amountPosts', 'progress'));
     }
