@@ -23,7 +23,7 @@ return new class extends Migration
             $table->text('reward');
             $table->timestamps();
 
-            $table->foreign('organisor')->references('id')->on('users');
+            $table->foreign('organiser')->references('id')->on('users');
         });
     }
 
