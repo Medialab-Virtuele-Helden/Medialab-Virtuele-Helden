@@ -1,0 +1,33 @@
+.o-icon-gold {
+  font-size: 36px;
+  color: #FFD32B;
+}
+
+.o-icon-silver {
+  font-size: 36px;
+  color: #9E9E9E;
+}
+
+.o-icon-bronze {
+  font-size: 36px;
+  color: #DA7330;
+}
+
+.o-leaderboard-avatar {
+  border-radius: 50%;
+  height: 75px;
+  width: auto;
+}
+
+.o-leaderboard-medal {
+  position: relative;
+  text-align: center;
+}
+
+.o-leaderboard-medal-position-top-right {
+  position: absolute;
+  width: 36px;
+  height: auto;
+  top: 0px;
+  right: 0px;
+}

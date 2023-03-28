@@ -1,0 +1,11 @@
+@import '../variables';
+
+.progress {
+  height: 40px;
+  border-radius: 20px;
+}
+
+.progress-bar {
+  background-color: $color-success;
+  color: #D9D9D9;
+}

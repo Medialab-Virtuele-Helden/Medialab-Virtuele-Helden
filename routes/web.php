@@ -23,7 +23,7 @@ Route::controller(PostController::Class)->group(function() {
     Route::get('/posts/{id}', 'show')->name('post.show');
 
     Route::get('/', 'index')->name('post.index');
-    
+
     Route::get('/posts/{id}/edit', 'edit')->name('post.edit');
     Route::post('/posts/{id}/update', 'update')->name('post.update');
 
@@ -36,8 +36,6 @@ Route::controller(ChallengeController::Class)->group(function() {
 
     Route::get('/challenges/{id}', 'show')->name('challenge.show');
 
-    // Route::get('/', 'index')->name('challenge.index');
-    
     Route::get('/challenges/{id}/edit', 'edit')->name('challenge.edit');
     Route::post('/challenges/{id}/update', 'update')->name('challenge.update');
 });
