@@ -9,8 +9,8 @@
                         <div>
                             <h2 class="mb-0">{{ $challenge-> title }}</h1>
                         </div>
-                        <div class="float-end">
-                            <i class="fa-sharp fa-regular fa-clock o-text"></i>
+                        <div class="float-end d-flex flex-row">
+                            <h2><i class="fa-sharp fa-regular fa-clock o-text mx-2 align-items-center"></i></h2>
                             <h2 class="o-timer mb-0" id="timer" data-startDate="{{ $challenge->start_date }}" data-endDate="{{$challenge->end_date}}">{{ $challenge-> end_date }}</h1>
                         </div>
                     </div>
