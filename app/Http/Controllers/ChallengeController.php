@@ -13,6 +13,7 @@ use Illuminate\Http\Response;
 use Illuminate\View\View;
 
 use App\Models\Challenge;
+use App\Models\Post;
 
 
 class ChallengeController extends Controller
@@ -26,7 +27,11 @@ class ChallengeController extends Controller
     public function show(string $id): View {
         $challenge = Challenge::findOrFail($id);
 
-        return view('challenge.show', compact('challenge'));
+        $amountPosts = $this->countPostsWithinChallengePeriod($challenge);
+
+        $progress = round($amountPosts / $challenge->challenge_goal * 100);
+
+        return view('challenge.show', compact('challenge', 'amountPosts', 'progress'));
     }
 
     public function create(): View {
@@ -118,5 +123,10 @@ class ChallengeController extends Controller
         }
         abort(401);
     }
-    */
+    */ 
+
+    
+    private function countPostsWithinChallengePeriod($challenge) {
+        return Post::all()->whereBetween('created_at', [$challenge->start_date, $challenge->end_date])->count();
+    }
 }

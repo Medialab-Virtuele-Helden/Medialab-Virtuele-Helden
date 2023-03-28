@@ -74,7 +74,7 @@
               <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-5">
                 <li class="nav-item d-flex">
                   <img src="{{ asset('images/user-avatar.png') }}" alt="User avatar" class="o-nav-user">
-                  <a class="nav-link" href="#">Team 3</a>
+                  <a class="nav-link" href="#">{{Auth::user()->name}}</a>
                 </li>
               </ul>
                         
