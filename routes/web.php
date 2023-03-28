@@ -36,8 +36,6 @@ Route::controller(ChallengeController::Class)->group(function() {
 
     Route::get('/challenges/{id}', 'show')->name('challenge.show');
 
-    // Route::get('/', 'index')->name('challenge.index');
-
     Route::get('/challenges/{id}/edit', 'edit')->name('challenge.edit');
     Route::post('/challenges/{id}/update', 'update')->name('challenge.update');
 });
