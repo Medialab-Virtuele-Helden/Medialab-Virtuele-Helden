@@ -24,6 +24,6 @@ let x = setInterval(function() {
   // If the count down is over, write some text 
   if (remainingTime < 0) {
     clearInterval(x);
-    timer.innerHTML = "EXPIRED";
+    timer.innerHTML = "Deze challenge is afgelopen";
   }
 }, 1000);
