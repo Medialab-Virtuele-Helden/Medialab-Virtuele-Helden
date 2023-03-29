@@ -24,7 +24,7 @@
                                     <h1 class="card-post-title">{{ $post->title }}</h1>
                                     <p class="badge badge-primary ms-3 mt-1">Challenge</a>
                                 </div>
-                                <p>{{ $post->author }}</p>
+                                <p>{{ $post->user->name }}</p>
                                 <div>
                                     <p>{!! $post->content !!}</p>
                                 </div>

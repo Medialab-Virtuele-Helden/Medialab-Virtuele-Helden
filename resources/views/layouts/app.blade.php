@@ -15,6 +15,8 @@
 
     @vite(['resources/js/app.js'])
 
+    @yield('header-scripts')
+
     <!-- Scripts -->
     <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
 
@@ -71,12 +73,14 @@
                 </li>
               </ul>
 
-              <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-5">
-                <li class="nav-item d-flex">
-                  <img src="{{ asset('images/user-avatar.png') }}" alt="User avatar" class="o-nav-user">
-                  <a class="nav-link" href="#">{{Auth::user()->name}}</a>
-                </li>
-              </ul>
+              @auth
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-5">
+                  <li class="nav-item d-flex">
+                    <img src="{{ asset('images/user-avatar.png') }}" alt="User avatar" class="o-nav-user">
+                    <a class="nav-link" href="#">{{Auth::user()->name}}</a>
+                  </li>
+                </ul>
+              @endauth
                         
               <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-5">
                 <li class="nav-item me-2">

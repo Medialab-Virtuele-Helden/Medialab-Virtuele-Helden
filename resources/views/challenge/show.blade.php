@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('header-scripts')
+    @vite(['resources/js/timer.js'])
+@endsection
+
 @section('content')
     <div class="container-xxl mt-4 p-3">
         <div class="row g-5">
@@ -25,7 +29,7 @@
                                 <h4>{!! $challenge-> content !!}</h4>
                             </div>
                             <div>
-                                <h4 class="mt-5"><b>Prijs:</b>{{ $challenge-> reward }}</h4>
+                                <h4 class="mt-5"><b>Prijs: </b>{{ $challenge-> reward }}</h4>
                             </div>
                         </div>
                         <div class="progress mt-5">
