@@ -43,7 +43,9 @@
 
             <div class="col-3">
                 <div class="card shadow bg-white p-4 h-100">
-                    <h2 class="mb-0">Leaderboard</h1>
+                    <div id="leaderboard">
+                        <h2 class="mb-0">Leaderboard</h2>
+                    </div>
                     <div class="mt-2">
                         <div class="d-flex flex-row align-items-center mt-3">
                             <div class="o-leaderboard-medal">
@@ -93,4 +95,27 @@
             </div>
         </div>
     </div>
+
+    <script>
+        const alertPlaceholder = document.getElementById('liveAlertPlaceholder')
+
+        const alert = (message, type) => {
+        const wrapper = document.createElement('div')
+        wrapper.innerHTML = [
+            `<div class="alert alert-${type} alert-dismissible" role="alert">`,
+            `   <div>${message}</div>`,
+            '   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>',
+            '</div>'
+        ].join('')
+
+        alertPlaceholder.append(wrapper)
+        }
+
+        const alertTrigger = document.getElementById('liveAlertBtn')
+        if (alertTrigger) {
+        alertTrigger.addEventListener('click', () => {
+            alert('Nice, you triggered this alert message!', 'success')
+        })
+        }
+    </script>
 @endsection
