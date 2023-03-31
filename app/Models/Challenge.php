@@ -30,6 +30,6 @@ class Challenge extends Model
      */
     public function participants(): BelongsToMany
     {
-        return $this->belongsToMany(User::class, 'participants', 'user_id', 'challenge_id');
+        return $this->belongsToMany(User::class, 'participants', 'challenge_id', 'user_id');
     }
 }
