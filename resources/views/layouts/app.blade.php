@@ -53,6 +53,9 @@
               <li class="nav-item">
                 <a class="nav-link" href="#">VH Events</a>
               </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{{ route('challenge.show', [1]) }}">Actieve Challenge</a>
+              </li>
             </ul>
             <div class="d-flex">
               <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-5">
