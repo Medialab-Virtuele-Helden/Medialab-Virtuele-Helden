@@ -1,4 +1,10 @@
 .card {
+    color: $color-text;
+
+    &-link {
+        text-decoration: none;
+    }
+
     &-post-avatar {
         border-radius: 5px;
         max-height: 50px;
@@ -13,5 +19,5 @@
 
 .badge-primary {
     background-color: $color-primary;
-    color: white;
+    color: white !important;
 }

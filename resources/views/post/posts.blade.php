@@ -14,23 +14,25 @@
 
             <div class="col-7">
                 @foreach($posts as $post)
-                    <div class="card shadow bg-white p-4 m-4 mt-0">
-                        <div class="row g-3">
-                            <div class="col-1">
-                                <img src="{{ asset('images/user-avatar.png') }}" alt="Gebruikers afbeelding" class="card-post-avatar">
-                            </div>
-                            <div class="col-10 ms-4">
-                                <div class="d-flex flex-row">
-                                    <h1 class="card-post-title">{{ $post->title }}</h1>
-                                    <p class="badge badge-primary ms-3 mt-1">Challenge</a>
+                    <a class="card-link" href="{{route('challenge.show', [$post->id])}}">
+                        <div class="card shadow bg-white p-4 m-4 mt-0">
+                            <div class="row g-3">
+                                <div class="col-1">
+                                    <img src="{{ asset('images/user-avatar.png') }}" alt="Gebruikers afbeelding" class="card-post-avatar">
                                 </div>
-                                <p>{{ $post->user->name }}</p>
-                                <div>
-                                    <p>{!! $post->content !!}</p>
+                                <div class="col-10 ms-4">
+                                    <div class="d-flex flex-row">
+                                        <h1 class="card-post-title">{{ $post->title }}</h1>
+                                        <p class="badge badge-primary ms-3 mt-1">Challenge</p>
+                                    </div>
+                                    <p>{{ $post->user->name }}</p>
+                                    <div>
+                                        <p>{!! $post->content !!}</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </a>
                 @endforeach
             </div>
 
@@ -38,7 +40,7 @@
                 <div class="card shadow bg-white p-4 m-4 mt-0">
                     <div class="d-flex flex-row justify-content-between">
                         <p>Level</p>
-                        <p><i class="fa-regular fa-star"></i> 0</p>
+                        <p>0 <i class="fa-regular fa-star"></i></p>
                     </div>
                     <div class="progress" style="height: 10px;">
                         <div class="progress-bar d-flex flex-row justify-content-between" role="progressbar" style="width: 10%;"></div>
