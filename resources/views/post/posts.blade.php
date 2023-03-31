@@ -14,7 +14,7 @@
 
             <div class="col-7">
                 @foreach($posts as $post)
-                    <a class="card-link" href="{{route('challenge.show', [$post->id])}}">
+                    <a class="card-link" href="{{route('post.show', [$post->id])}}">
                         <div class="card shadow bg-white p-4 m-4 mt-0">
                             <div class="row g-3">
                                 <div class="col-1">
