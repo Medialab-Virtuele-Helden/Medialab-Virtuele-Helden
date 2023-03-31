@@ -47,49 +47,45 @@
                         <h2 class="mb-0">Leaderboard</h2>
                     </div>
                     <div class="mt-2">
-                        <div class="d-flex flex-row align-items-center mt-3">
-                            <div class="o-leaderboard-medal">
-                                <img src="{{ asset('images/user-avatar.png') }}" alt="Gebruikers afbeelding" class="o-leaderboard-avatar">
-                                <img src="{{ asset('icons/medal-solid-gold.svg') }}" alt="Gebruikers afbeelding" class="o-leaderboard-medal-position-top-right">
+                        @if (count($rest) > 0)
+                            <div class="d-flex flex-row align-items-center mt-3">
+                                <div class="o-leaderboard-medal">
+                                    <img src="{{ asset('images/user-avatar.png') }}" alt="Gebruikers afbeelding" class="o-leaderboard-avatar">
+                                    <img src="{{ asset('icons/medal-solid-gold.svg') }}" alt="Gebruikers afbeelding" class="o-leaderboard-medal-position-top-right">
+                                </div>
+                                <div class="ms-3">
+                                    <p class="mb-0">{{ $first->name }}</p>
+                                </div>
                             </div>
-                            <div class="ms-3">
-                                <p class="mb-0">Roel <br>95 reacties</p>
-                            </div>
-                        </div>
-
-                        <div class="d-flex flex-row align-items-center mt-3">
+                            <div class="d-flex flex-row align-items-center mt-3">
                             <div class="o-leaderboard-medal">
                                 <img src="{{ asset('images/user-avatar.png') }}" alt="Gebruikers afbeelding" class="o-leaderboard-avatar">
                                 <img src="{{ asset('icons/medal-solid-silver.svg') }}" alt="Gebruikers afbeelding" class="o-leaderboard-medal-position-top-right">
                             </div>
                             <div class="ms-3">
-                                <p class="mb-0">Antwan <br>85 reacties</p>
+                                <p class="mb-0">{{ $second->name }}</p>
                             </div>
                         </div>
-
                         <div class="d-flex flex-row align-items-center mt-3">
                             <div class="o-leaderboard-medal">
                                 <img src="{{ asset('images/user-avatar.png') }}" alt="Gebruikers afbeelding" class="o-leaderboard-avatar">
                                 <img src="{{ asset('icons/medal-solid-bronze.svg') }}" alt="Gebruikers afbeelding" class="o-leaderboard-medal-position-top-right">
                             </div>
                             <div class="ms-3">
-                                <p class="mb-0">Stan <br>52 reacties</p>
+                                <p class="mb-0">{{ $third->name }}</p>
                             </div>
                         </div>
-
-                        <div class="d-flex flex-row align-items-center mt-3">
-                            <img src="{{ asset('images/user-avatar.png') }}" alt="Gebruikers afbeelding" class="o-leaderboard-avatar">
-                            <div class="ms-3">
-                                <p class="mb-0">Hans <br>24 reacties</p>
+                            @foreach($rest as $p)
+                            <div class="d-flex flex-row align-items-center mt-3">
+                                <img src="{{ asset('images/user-avatar.png') }}" alt="Gebruikers afbeelding" class="o-leaderboard-avatar">
+                                <div class="ms-3">
+                                    <p class="mb-0">{{ $p->name }}</p>
+                                </div>
                             </div>
-                        </div>
-
-                        <div class="d-flex flex-row align-items-center mt-3">
-                            <img src="{{ asset('images/user-avatar.png') }}" alt="Gebruikers afbeelding" class="o-leaderboard-avatar">
-                            <div class="ms-3">
-                                <p class="mb-0">Martijn <br>14 reacties</p>
-                            </div>
-                        </div>
+                            @endforeach
+                        @else
+                            <p>No participants yets.
+                        @endif
                     </div>
                 </div>
             </div>

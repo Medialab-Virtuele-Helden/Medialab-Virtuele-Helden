@@ -5,7 +5,7 @@ namespace App\Models;
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
-use Illuminate\Database\Eloquent\Relations\HasManyThrough;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -80,8 +80,8 @@ class User extends Authenticatable
     /**
      * The roles that belong to the user.
      */
-    public function participated_challenges(): HasManyThrough
+    public function participated_challenges(): BelongsToMany
     {
-        return $this->hasManyThrough(Challenge::class, Participant::class);
+        return $this->belongsToMany(Challenge::class, 'participants', 'user_id', 'challenge_id');
     }
 }

@@ -27,11 +27,17 @@ class ChallengeController extends Controller
     public function show(string $id): View {
         $challenge = Challenge::findOrFail($id);
 
+        $participants = $challenge->participants;
+        $first = $participants->first();
+        $second = $participants->skip(1)->first();
+        $third = $participants->skip(2)->first();
+        $rest = $participants->skip(3);
+
         $amountPosts = $this->countPostsWithinChallengePeriod($challenge);
 
         $progress = round($amountPosts / $challenge->challenge_goal * 100);
 
-        return view('challenge.show', compact('challenge', 'amountPosts', 'progress'));
+        return view('challenge.show', compact('challenge', 'amountPosts', 'progress', 'rest', 'first', 'second', 'third'));
     }
 
     public function create(): View {
