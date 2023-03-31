@@ -3,7 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Relations\HasManyThrough;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Model;
 
@@ -28,8 +28,8 @@ class Challenge extends Model
     /**
      * The users that participated in a challenge.
      */
-    public function participants(): HasManyThrough
+    public function participants(): BelongsToMany
     {
-        return $this->hasManyThrough(User::class, Participant::class);
+        return $this->belongsToMany(User::class, 'participants', 'user_id', 'challenge_id');
     }
 }
