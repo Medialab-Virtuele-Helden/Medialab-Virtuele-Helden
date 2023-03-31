@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-  <div class="container-xxl card shadow bg-white mt-4 p-3">
     <div class="container-xxl card shadow bg-white mt-4 p-3">
       @if(session('status'))
         <div class="alert alert-success">
@@ -32,7 +31,7 @@
                 </div>
               </div>
               <div class="row mb-3">
-                <label for="challenge-description" class="col-sm-2 col-form-label">Content</label>
+                <label for="challenge-content" class="col-sm-2 col-form-label">Content</label>
                 <div class="col-sm-10">
                   <textarea class="text-editor form-control" id="challenge-content" name="content"></textarea>
                 </div>
@@ -55,10 +54,21 @@
                   <input type="datetime-local" class="form-control" id="challenge-end-date" name="end-date">
                 </div>
               </div>
-              <div class="row mb-0">
-                <label for="challenge-title" class="col-sm-2 col-form-label">Goal aantal</label>
+              <div class="row mb-3">
+                <label for="challenge-goal-type" class="col-sm-2 col-form-label">Challenge</label>
                 <div class="col-sm-10">
-                  <input type="number" class="form-control" id="challenge-goal" name="challenge-goal" placeholder="300">
+                    <select class="form-select" id="challenge-goal-type">
+                        <option selected disabled>Kies een challenge</option>
+                        <option value="1">Posts maken</option>
+                        <option value="2">Antwoorden geven</option>
+                        <option value="3">Likes geven</option>
+                    </select>
+                </div>
+              </div>
+              <div class="row mb-0">
+                <label for="challenge-goal-amount" class="col-sm-2 col-form-label">Goal aantal</label>
+                <div class="col-sm-10">
+                  <input type="number" class="form-control" id="challenge-goal-amount" name="challenge-goal" placeholder="300">
                 </div>
               </div>
             </div>
@@ -67,7 +77,7 @@
             <h2 class="o-card-create-challenge-header mb-0 mt-3">Beloningen</h2>
             <div class="o-card-create-challenge">
               <div class="row mb-0">
-                <label for="challenge-title" class="col-sm-2 col-form-label">Titel</label>
+                <label for="challenge-reward" class="col-sm-2 col-form-label">Titel</label>
                 <div class="col-sm-10">
                   <input type="text" class="form-control" id="challenge-reward" name="reward">
                 </div>
@@ -77,5 +87,4 @@
           <button type="submit" class="btn btn-secondary float-end mt-5">Opslaan</button>
         </form>
       </div>
-  </div>
 @endsection
