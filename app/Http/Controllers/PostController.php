@@ -1,11 +1,13 @@
 <?php
 
 namespace App\Http\Controllers;
+use DateTime;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 use App\Models\Post;
+use App\Models\Challenge;
 
 class PostController extends Controller
 {
@@ -40,11 +42,13 @@ class PostController extends Controller
             'author' => $author
         ]);
 
+        $x = $this->linkAuthorToChallenge($post);
+        
         if ($post->save()) {
             return redirect()->route('post.show', ['id' => $post->id])->with('status', 'Post has been created!');
         }
 
-        return redirect()->route('post.create', ['post' => $post])->with('status', 'Something went wrong, try again.');
+        return redirect()->route('post.create', ['post' => $post])->with('status', $x);
     }
 
     public function edit(string $id) {
@@ -73,8 +77,23 @@ class PostController extends Controller
         return redirect()->route('post.edit', ['post' => $post])->with('status', 'Something went wrong, try again.');
     }
 
-    public function likePost(string $id) {
-        // check post
-        // add like
+    private function linkAuthorToChallenge(Post $post) {
+        $postDate = new DateTime($post->created_at);
+
+        $activeChallenge = Challenge::where('status', '=', '1')->get()->first();
+        $startDate = new DateTime($activeChallenge->start_date);
+        $endDate = new DateTime($activeChallenge->end_date);
+
+        $author = $post->user;
+
+        if (
+            $activeChallenge &&
+            $postDate->getTimestamp() < $endDate->getTimestamp() &&
+            $postDate->getTimestamp() > $startDate->getTimestamp() &&
+            !$author->participated_challenges->contains($activeChallenge->id)
+        ) {
+            $author->participated_challenges()->attach($activeChallenge->id);
+            return 'attached';
+        }
     }
 }

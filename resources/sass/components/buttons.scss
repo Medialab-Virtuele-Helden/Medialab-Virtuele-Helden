@@ -1,0 +1,22 @@
+.btn {
+  border-radius: 3px;
+  padding: 8px 12px;
+}
+
+.btn-primary {
+  background-color: $color-primary;
+  color: $color-text;
+  border: $color-primary;
+
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: $color-primary-hover !important;
+    color: white !important;
+  }
+}
+
+.btn-secondary {
+  background-color: black;
+  color: white;
+}

@@ -1,0 +1,23 @@
+.card {
+    color: $color-text;
+
+    &-link {
+        text-decoration: none;
+    }
+
+    &-post-avatar {
+        border-radius: 5px;
+        max-height: 50px;
+        max-width: 50px;
+    }
+
+    &-post-title {
+        font-size: 20px;
+        font-weight: 600;
+    }
+}
+
+.badge-primary {
+    background-color: $color-primary;
+    color: white !important;
+}

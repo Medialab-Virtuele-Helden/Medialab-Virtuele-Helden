@@ -1,0 +1,30 @@
+@import './variables';
+
+html, body {
+  font-family: $font-family-primary;
+  color: $color-text;
+  background-color: $color-background;
+}
+
+h1 {
+  font-size: 32px;
+  font-weight: 400;
+}
+
+h2 {
+  font-size: 28px;
+  font-weight: 400;
+}
+
+h4 {
+  font-size: 20px;
+  font-weight: 400;
+}
+
+p {
+  font-size: 14px;
+}
+
+a {
+  font-size: 14px;
+}

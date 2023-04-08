@@ -1,105 +1,17 @@
-// Fonts
-@import url('https://fonts.bunny.net/css?family=Nunito');
-
-// Variables
-@import 'variables';
-
 // Bootstrap
 @import 'bootstrap/scss/bootstrap';
 
-:root {
-    --color-primary: #f4c227;
-    --color-danger: #fb757b;
-    --color-text: #222222;
-    --color-background: #E9EAEE;
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
-    --font-family-primary: "Open Sans", sans-serif;
-}
+@import 'base';
+@import 'variables';
+@import 'text';
 
-html, body {
-    font-family: var(--font-family-primary);
-    color: var(--color-text);
-    background-color: var(--color-background);
-}
-p {
-    font-size: 14px;
-}
-
-a {
-    font-size: 14px;
-}
-
-.navbar {
-    background-color: var(--color-primary) !important;
-    height: 70px;
-}
-
-.nav-link {
-    color: white;
-}
-
-.nav-link:hover {
-    color: white !important;
-    opacity: 0.8;
-}
-
-.card {
-    border: none;
-    border-radius: 5px;
-}
-
-.bg-danger {
-    background-color: var(--color-danger) !important;
-}
-
-.btn {
-    border-radius: 3px;
-    padding: 8px 12px;
-}
-
-.btn-primary {
-    background-color: var(--color-primary);
-    color: var(--color-text);
-}
-
-.btn-secondary {
-    background-color: black;
-    color: white;
-}
-
-.col-form-label {
-    font-size: 14px;
-    font-weight: 700;
-}
-
-
-//Custom CSS classes not provided by bootstrap
-.o-nav-logo {
-    height: 44px;
-    width: auto;
-}
-
-.o-icon-nav {
-    color: white;
-    font-size: 23px;
-}
-
-.o-nav-user {
-    height: 35px;
-    width: auto;
-    border-radius: 5px;
-}
-
-.o-card-create-challenge {
-    background-color: #EEEEEE;
-    border-radius: 0px 0px 15px 15px;
-    padding: 20px;
-}
-
-.o-card-create-challenge-header {
-    font-size: 20px;
-    font-weight: 700;
-    background-color: #D9D9D9;
-    border-radius: 15px 15px 0px 0px;
-    padding: 20px;
-}
+// Component list
+@import './components/nav';
+@import './components/buttons';
+@import './components/form';
+@import './components/progress-bar';
+@import './components/leaderbord';
+@import './components/timer';
+@import './components/post';
